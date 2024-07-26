@@ -56,7 +56,7 @@ export default function Gifts() {
   }
 
   return (
-    <main className="w-full ">
+    <main className="w-full mb-10">
       <header className="w-full h-[600px] flex flex-col items-center justify-center ">
         <Image
           src="/elements/flor.svg"
