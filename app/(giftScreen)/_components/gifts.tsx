@@ -4,6 +4,9 @@ import { Great_Vibes, Forum } from "next/font/google";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Cards from "./cards";
+import { Button } from "@/components/ui/button";
+import { Map, Palette } from "lucide-react";
+import Icons from "./icons";
 
 const forum = Forum({ weight: "400", subsets: ["latin"] });
 const great = Great_Vibes({ weight: "400", subsets: ["latin"] });
@@ -53,7 +56,7 @@ export default function Gifts() {
   }
 
   return (
-    <main className="w-full mb-40">
+    <main className="w-full ">
       <header className="w-full h-[600px] flex flex-col items-center justify-center ">
         <Image
           src="/elements/flor.svg"
@@ -80,6 +83,32 @@ export default function Gifts() {
               {timeLeft.days} Dias
             </p>
           </span>
+        </div>
+        <div className="flex items-center justify-center gap-5 w-full mt-20">
+          <Icons Icon={Palette}>
+            <p className="text-sm text-muted-foreground mb-2">
+              Veja um exemplo das paletas de cores.
+            </p>
+            <div className="w-[300px] h-20 flex items-center justify-center gap-2">
+              <div className="w-10 h-10 bg-amber-800/30 rounded-full" />
+              <div className="w-10 h-10 bg-amber-800/30 rounded-full" />
+              <div className="w-10 h-10 bg-amber-800/30 rounded-full" />
+            </div>
+          </Icons>
+          <Icons Icon={Map}>
+            <p className="text-sm text-muted-foreground mb-2">
+              Local onde será feito o chá.
+            </p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!4v1722012347609!6m8!1m7!1s2dlysGJGtsqC-ONS6dvW5Q!2m2!1d-7.666519938698076!2d-36.88942507221317!3f37.48204202059318!4f-4.731608909965104!5f0.7820865974627469"
+              width="300"
+              height="150"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </Icons>
         </div>
       </header>
 
