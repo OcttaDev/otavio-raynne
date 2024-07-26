@@ -3,6 +3,7 @@
 import { Great_Vibes, Forum } from "next/font/google";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import Cards from "./cards";
 
 const forum = Forum({ weight: "400", subsets: ["latin"] });
 const great = Great_Vibes({ weight: "400", subsets: ["latin"] });
@@ -88,6 +89,13 @@ export default function Gifts() {
           <p>
             Abaixo estão os produtos da lista de presentes para você escolher.
           </p>
+        </div>
+
+        <div className="flex gap-4 mt-10 overflow-x-auto [&::-webkit-scrollbar]:hidden">
+          <Cards />
+          <Cards />
+          <Cards />
+          <Cards />
         </div>
       </div>
     </main>
