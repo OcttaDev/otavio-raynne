@@ -1,0 +1,245 @@
+{
+  "cozinha": [
+    {
+      "id": "1",
+      "name": "Jogo de talheres",
+      "quantity": 1
+    },
+    {
+      "id": "2",
+      "name": "Jogo de facas",
+      "quantity": 1
+    },
+    {
+      "id": "3",
+      "name": "Jogo de copos",
+      "quantity": 3
+    },
+    {
+      "id": "4",
+      "name": "Jogo americano",
+      "quantity": 2
+    },
+    {
+      "id": "5",
+      "name": "Jogo de pegadores",
+      "quantity": 1
+    },
+    {
+      "id": "6",
+      "name": "Toalha de prato",
+      "quantity": 2
+    },
+    {
+      "id": "7",
+      "name": "Escorredor de louça",
+      "quantity": 1
+    },
+    {
+      "id": "8",
+      "name": "Travessa de vidro redonda",
+      "quantity": 1
+    },
+    {
+      "id": "9",
+      "name": "Travessa de vidro quadrada",
+      "quantity": 1
+    },
+    {
+      "id": "10",
+      "name": "Forma para bolo",
+      "quantity": 2
+    },
+    {
+      "id": "11",
+      "name": "Conjunto de sobremesa",
+      "quantity": 2
+    },
+    {
+      "id": "12",
+      "name": "Jarra de vidro",
+      "quantity": 2
+    },
+    {
+      "id": "13",
+      "name": "Ralador",
+      "quantity": 1
+    },
+    {
+      "id": "14",
+      "name": "Kit pia",
+      "quantity": 1
+    },
+    {
+      "id": "15",
+      "name": "Potes de mantimentos",
+      "quantity": 1
+    },
+    {
+      "id": "16",
+      "name": "Potes de temperos",
+      "quantity": 1
+    },
+    {
+      "id": "17",
+      "name": "Fuê",
+      "quantity": 1
+    },
+    {
+      "id": "18",
+      "name": "Garrafa de água",
+      "quantity": 3
+    },
+    {
+      "id": "19",
+      "name": "Kit de utensílios de cozinha",
+      "quantity": 11
+    },
+    {
+      "id": "20",
+      "name": "Escorredor de arroz",
+      "quantity": 1
+    },
+    {
+      "id": "21",
+      "name": "Abridor de lata",
+      "quantity": 1
+    },
+    {
+      "id": "22",
+      "name": "Panela de pressão",
+      "quantity": 1
+    },
+    {
+      "id": "23",
+      "name": "Conjunto de xícaras",
+      "quantity": 1
+    },
+    {
+      "id": "24",
+      "name": "Porta condimentos",
+      "quantity": 1
+    },
+    {
+      "id": "25",
+      "name": "Espremedor",
+      "quantity": 1
+    },
+    {
+      "id": "26",
+      "name": "Copo de medidas",
+      "quantity": 1
+    },
+    {
+      "id": "27",
+      "name": "Tábua para cortes",
+      "quantity": 1
+    },
+    {
+      "id": "28",
+      "name": "Peneiras",
+      "quantity": 1
+    },
+    {
+      "id": "29",
+      "name": "Funil",
+      "quantity": 1
+    },
+    {
+      "id": "30",
+      "name": "Coador",
+      "quantity": 1
+    },
+    {
+      "id": "31",
+      "name": "Boleira",
+      "quantity": 1
+    },
+    {
+      "id": "32",
+      "name": "Jogo de prato",
+      "quantity": 3
+    },
+    {
+      "id": "33",
+      "name": "Tigelas",
+      "quantity": 2
+    },
+    {
+      "id": "34",
+      "name": "Garrafa térmica",
+      "quantity": 11
+    },
+    {
+      "id": "35",
+      "name": "Saleiro",
+      "quantity": 1
+    }
+  ],
+  "sala": [
+    {
+      "id": "1",
+      "name": "Cortina",
+      "quantity": 1
+    },
+    {
+      "id": "2",
+      "name": "Almofadas",
+      "quantity": 2
+    },
+    {
+      "id": "3",
+      "name": "Fronha/almofadas",
+      "quantity": 2
+    },
+    {
+      "id": "4",
+      "name": "Manta",
+      "quantity": 2
+    }
+  ],
+  "quarto": [
+    {
+      "id": "1",
+      "name": "Jogo de cama",
+      "quantity": 3
+    },
+    {
+      "id": "2",
+      "name": "Travesseiros",
+      "quantity": 2
+    },
+    {
+      "id": "3",
+      "name": "Cobertor",
+      "quantity": 2
+    }
+  ],
+  "banheiro": [
+    {
+      "id": "1",
+      "name": "Porta sabonete",
+      "quantity": 2
+    },
+    {
+      "id": "2",
+      "name": "Toalhas de banho",
+      "quantity": 4
+    },
+    {
+      "id": "3",
+      "name": "Toalha de rosto",
+      "quantity": 4
+    },
+    {
+      "id": "4",
+      "name": "Jogo de tapete",
+      "quantity": 2
+    },
+    {
+      "id": "5",
+      "name": "Tábua de passar",
+      "quantity": 1
+    }
+  ]
+}

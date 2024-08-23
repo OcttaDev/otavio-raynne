@@ -16,18 +16,12 @@ export default function Icons({
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button
-          variant="outline"
-          size="icon"
-          className="rounded-full w-12 h-12"
-        >
+        <Button variant="outline" size="icon" className="rounded-full w-7 h-7">
           <Icon />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[90%] flex justify-center mx-auto">
-        <div className="px-3 mx-4 w-full flex flex-col items-center">
-          {children}
-        </div>
+      <PopoverContent className="mx-2">
+        <div className="">{children}</div>
       </PopoverContent>
     </Popover>
   );
