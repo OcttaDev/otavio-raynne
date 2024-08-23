@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { useToast } from "@/components/ui/use-toast";
 import { HandIcon } from "@radix-ui/react-icons";
-import Image from "next/image";
 import { IGift } from "./gifts";
 import { db } from "@/lib/firebase.confing";
 import { addDoc, collection } from "firebase/firestore";
