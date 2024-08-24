@@ -118,12 +118,7 @@ export default function Gifts() {
       <div className="mt-10 flex flex-wrap gap-5 ">
         {Object.entries(gifts).map(([category, giftsList]) =>
           giftsList.map((gift: IGift) => (
-            <Cards
-              gift={gift}
-              key={gift.id}
-              category={category}
-              isChecked={false}
-            />
+            <Cards gift={gift} key={gift.id} category={category} />
           ))
         )}
       </div>

@@ -40,7 +40,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     // Limpar o listener quando o componente for desmontado
     return () => unsubscribe();
-  }, [router]);
+  }, [router, user]);
 
   return (
     <AuthContext.Provider value={{ user, loading }}>

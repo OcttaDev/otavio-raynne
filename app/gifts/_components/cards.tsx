@@ -20,11 +20,9 @@ import { useRouter } from "next/navigation";
 export default function Cards({
   gift,
   category,
-  isChecked,
 }: {
   gift: IGift;
   category: string;
-  isChecked: boolean;
 }) {
   const { toast } = useToast();
   const { user } = useAuthContext();
@@ -102,10 +100,6 @@ export default function Cards({
     }
   };
 
-  const handleSetChecked = () => {
-    console.log("setChecked");
-  };
-
   return (
     <Card>
       <CardHeader className="relative flex flex-col items-center justify-center gap-2 ">
@@ -124,12 +118,9 @@ export default function Cards({
         </div>
         <Button
           className="bg-amber-800/30 hover:bg-amber-800/20 text-md w-full mt-5"
-          onClick={() => {
-            isChecked ? handleSetChecked() : handleCheckItem();
-          }}
+          onClick={handleCheckItem}
         >
-          <HandIcon className="mr-5" width={20} height={20} />
-          {isChecked ? <p>Concluir</p> : <p>Escolher</p>}
+          <p>Escolher</p>
         </Button>
       </CardContent>
     </Card>
