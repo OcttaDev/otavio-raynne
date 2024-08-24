@@ -7,6 +7,7 @@ import { MapPin, Palette } from "lucide-react";
 import Cards from "./cards";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/lib/firebase.confing";
+import Image from "next/image";
 
 export interface IGift {
   id: string;
@@ -97,10 +98,19 @@ export default function Gifts() {
         <Icons Icon={Palette}>
           <>
             <div className="flex flex-col gap-2 ">
-              <h2 className="text-xl font-bold">Favoritos</h2>
-              <p className="text-sm">
-                Favoritos são os itens que você gosta de ver e usar
-              </p>
+              <h2 className="text-xl font-bold">Nossa Paleta de Cores</h2>
+              <div className="flex gap-2 mt-2">
+                <div className="border-2 border-gray-200 rounded-full w-10 h-10 bg-white"></div>
+                <div className="border-2 border-gray-200 rounded-full w-10 h-10 bg-black"></div>
+                <div className="border-2 border-gray-200 rounded-full w-10 h-10 relative">
+                  <Image
+                    src="/elements/cor.webp"
+                    alt="cor"
+                    fill
+                    className="object-cover rounded-full"
+                  />
+                </div>
+              </div>
             </div>
           </>
         </Icons>
