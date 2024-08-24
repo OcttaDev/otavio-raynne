@@ -65,7 +65,7 @@ export default function RecevedGiftsC() {
               </span>
             </CardHeader>
 
-            <CardContent className="w-[11rem] flex flex-col items-center">
+            <CardContent className="w-40 flex flex-col items-center">
               <div className="w-full flex flex-col mt-10">
                 <p className="text-xs  capitalize">{gift.category}</p>
                 <p className="text-xs font-bold capitalize">{gift.item}</p>

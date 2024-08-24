@@ -117,10 +117,16 @@ export default function Gifts() {
         <Icons Icon={MapPin}>
           <>
             <div className="flex flex-col gap-2">
-              <h2 className="text-xl font-bold">Favoritos</h2>
-              <p className="text-sm">
-                Favoritos são os itens que você gosta de ver e usar
-              </p>
+              <h2 className="text-xl font-bold">Local</h2>
+              <div className="w-full h-40 mt-2">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!4v1724523753454!6m8!1m7!1s2dlysGJGtsqC-ONS6dvW5Q!2m2!1d-7.666519938698076!2d-36.88942507221317!3f41.68625808687909!4f-8.78220618584595!5f0.7820865974627469"
+                  width={250}
+                  height={150}
+                  style={{ border: 0, borderRadius: "8px" }}
+                  loading="lazy"
+                ></iframe>
+              </div>
             </div>
           </>
         </Icons>
