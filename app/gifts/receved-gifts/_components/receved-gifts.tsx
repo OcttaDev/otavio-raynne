@@ -21,6 +21,7 @@ export default function RecevedGiftsC() {
   interface IGifts {
     id: string;
     item: string;
+    category: string;
   }
   const handleGetGifts = async () => {
     try {
@@ -33,6 +34,7 @@ export default function RecevedGiftsC() {
             list.push({
               id: doc.id,
               item: doc.data().item,
+              category: doc.data().category,
             });
           }
         }
@@ -59,12 +61,13 @@ export default function RecevedGiftsC() {
             <CardHeader className="relative flex flex-col items-center justify-center gap-2 ">
               {/* <Image src="" alt="gifts" width={200} height={200} /> */}
               <span className="absolute top-2 left-5 bg-green-500/40 p-2 rounded-md shadow-xl shadow-black/20">
-                <p className="text-white font-medium ">Disponivel</p>
+                <p className="text-white font-medium ">Escolhido</p>
               </span>
             </CardHeader>
 
-            <CardContent className="flex flex-col items-center">
+            <CardContent className="w-48 flex flex-col items-center">
               <div className="w-full flex flex-col mt-10">
+                <p className="text-xs  capitalize">{gift.category}</p>
                 <p className="text-xs font-bold capitalize">{gift.item}</p>
               </div>
               <Button className="bg-amber-800/30 hover:bg-amber-800/20 text-md w-full mt-5">

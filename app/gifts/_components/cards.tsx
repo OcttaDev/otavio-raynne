@@ -31,6 +31,7 @@ export default function Cards({
   const handleCheckItem = async () => {
     await addDoc(collection(db, "presentes-escolhidos"), {
       item: gift.name,
+      category: category,
       convidado: user?.uid,
     })
       .then((res) => {
@@ -83,11 +84,8 @@ export default function Cards({
 
     const item = items[itemIndex];
 
-    if (item.quantity > 1) {
-      // Atualiza a quantidade
+    if (item.quantity >= 1) {
       items[itemIndex].quantity -= 1;
-
-      // Atualiza o documento no Firestore
 
       await updateItemQuantity(docId, items);
       console.log(
@@ -104,11 +102,17 @@ export default function Cards({
     <Card>
       <CardHeader className="relative flex flex-col items-center justify-center gap-2 ">
         {/* <Image src="" alt="gifts" width={200} height={200} /> */}
-        <span className="absolute top-2 left-5 bg-green-500/40 p-2 rounded-md shadow-xl shadow-black/20">
-          <p className="text-white font-medium ">Disponivel</p>
+        <span
+          className={`absolute top-2 left-5 ${
+            gift.quantity >= 1 ? "bg-green-500/40" : "bg-red-500/40"
+          } p-2 rounded-md shadow-xl shadow-black/20`}
+        >
+          <p className="text-white font-medium ">
+            {gift.quantity >= 1 ? "Disponivel" : "Indisponivel"}
+          </p>
         </span>
       </CardHeader>
-      <CardContent className="w-40 flex flex-col items-center">
+      <CardContent className="w-48 h-40 flex flex-col items-center justify-end">
         <div className="w-full flex flex-col mt-10">
           <div className="flex items-center justify-between">
             <p className="text-xs  capitalize">{category}</p>
@@ -119,6 +123,7 @@ export default function Cards({
         <Button
           className="bg-amber-800/30 hover:bg-amber-800/20 text-md w-full mt-5"
           onClick={handleCheckItem}
+          disabled={gift.quantity <= 0}
         >
           <p>Escolher</p>
         </Button>
