@@ -1,16 +1,6 @@
 {
   "cozinha": [
     {
-      "id": "1",
-      "name": "Jogo de talheres",
-      "quantity": 1
-    },
-    {
-      "id": "2",
-      "name": "Jogo de facas",
-      "quantity": 1
-    },
-    {
       "id": "3",
       "name": "Jogo de copos",
       "quantity": 3

@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -9,6 +11,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { SidebarOpen } from "lucide-react";
+import Link from "next/link";
 
 export default function Sidebar() {
   return (
@@ -30,8 +33,12 @@ export default function Sidebar() {
           </SheetDescription>
         </SheetHeader>
         <div className="mt-20 flex flex-col gap-4 w-[80%]">
-          <Button variant="outline">Home</Button>
-          <Button variant="outline">Favoritos</Button>
+          <Button variant="outline" asChild>
+            <Link href="/gifts/">Home</Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="/gifts/receved-gifts">Favoritos</Link>
+          </Button>
         </div>
         <SheetFooter className="absolute bottom-10 left-0 right-0 w-full">
           <Button

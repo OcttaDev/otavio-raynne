@@ -6,26 +6,37 @@ import { useToast } from "@/components/ui/use-toast";
 import { HandIcon } from "@radix-ui/react-icons";
 import { IGift } from "./gifts";
 import { db } from "@/lib/firebase.confing";
-import { addDoc, collection } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  getDoc,
+  updateDoc,
+} from "firebase/firestore";
 import { useAuthContext } from "@/app/_context/authContext";
+import { useRouter } from "next/navigation";
 
 export default function Cards({
   gift,
   category,
+  isChecked,
 }: {
   gift: IGift;
   category: string;
+  isChecked: boolean;
 }) {
   const { toast } = useToast();
   const { user } = useAuthContext();
 
+  const router = useRouter();
   const handleCheckItem = async () => {
-    await addDoc(collection(db, "presentes"), {
+    await addDoc(collection(db, "presentes-escolhidos"), {
       item: gift.name,
       convidado: user?.uid,
     })
-      .then(() => {
-        handleCheckItemQuantity();
+      .then((res) => {
+        handleCheckItemQuantity(gift.uid, gift.id);
         toast({
           title: gift.name,
           description: "Item escolhido com sucesso!",
@@ -40,49 +51,59 @@ export default function Cards({
       });
   };
 
-  const handleCheckItemQuantity = async () => {
-    if (gift.quantity > 1) {
-      const data = {
-        id: gift.id,
-        name: gift.name,
-        quantity: gift.quantity - 1,
-      };
-      const fetchConfig = {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data), // Use 'body' ao invés de 'data'
-      };
-      try {
-        const response = await fetch(
-          `http://localhost:3001/${category}/${gift.id}`,
-          fetchConfig
-        );
+  const fetchDocument = async (docId: string) => {
+    const docRef = doc(db, "presentes", docId);
+    return await getDoc(docRef);
+  };
 
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
+  // Função para atualizar o item
+  const updateItemQuantity = async (docId: string, updatedItems: any) => {
+    const docRef = doc(db, "presentes", docId);
+    await updateDoc(docRef, { items: updatedItems }).then(() => {
+      router.push("/gifts/receved-gifts");
+    });
+  };
 
-        const updatedGift = await response.json();
-        console.log("Updated gift:", updatedGift);
+  // Função principal para verificar e atualizar a quantidade do item
+  const handleCheckItemQuantity = async (docId: string, itemId: string) => {
+    const docSnap = await fetchDocument(docId);
 
-        window.location.reload();
-      } catch (error) {
-        console.error("Error updating gift:", error);
-      }
+    if (!docSnap.exists()) {
+      console.log("Nenhum documento encontrado com esse ID!");
+      return;
     }
 
-    const fetchConfig = {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-    const response = await fetch(
-      `http://localhost:3001/${category}/${gift.id}`,
-      fetchConfig
-    );
+    const data = docSnap.data();
+    const items = data.items || []; // Acessa o array de itens
+
+    const itemIndex = items.findIndex((i: any) => i.id === itemId);
+
+    if (itemIndex === -1) {
+      console.log(`Item com ID ${itemId} não encontrado.`);
+      return;
+    }
+
+    const item = items[itemIndex];
+
+    if (item.quantity > 1) {
+      // Atualiza a quantidade
+      items[itemIndex].quantity -= 1;
+
+      // Atualiza o documento no Firestore
+
+      await updateItemQuantity(docId, items);
+      console.log(
+        `Quantidade do item ${itemId} atualizada para ${items[itemIndex].quantity}`
+      );
+    } else {
+      console.log(
+        `Quantidade do item ${itemId} não é suficiente para atualizar.`
+      );
+    }
+  };
+
+  const handleSetChecked = () => {
+    console.log("setChecked");
   };
 
   return (
@@ -103,10 +124,12 @@ export default function Cards({
         </div>
         <Button
           className="bg-amber-800/30 hover:bg-amber-800/20 text-md w-full mt-5"
-          onClick={handleCheckItem}
+          onClick={() => {
+            isChecked ? handleSetChecked() : handleCheckItem();
+          }}
         >
           <HandIcon className="mr-5" width={20} height={20} />
-          <p>Escolher</p>
+          {isChecked ? <p>Concluir</p> : <p>Escolher</p>}
         </Button>
       </CardContent>
     </Card>
