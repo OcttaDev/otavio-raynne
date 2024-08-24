@@ -112,7 +112,7 @@ export default function Cards({
           </p>
         </span>
       </CardHeader>
-      <CardContent className="w-48 h-40 flex flex-col items-center justify-end">
+      <CardContent className="w-[11rem] h-40 flex flex-col items-center justify-end">
         <div className="w-full flex flex-col mt-10">
           <div className="flex items-center justify-between">
             <p className="text-xs  capitalize">{category}</p>
