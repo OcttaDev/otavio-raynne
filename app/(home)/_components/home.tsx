@@ -52,7 +52,7 @@ export default function Home() {
         <div className="w-full flex justify-center mt-10">
           <Link
             href="/auth"
-            className="p-2 bg-[#3f5736] w-60 rounded-full shadow-xl shadow-black/20 text-center text-white text-xl font-bold"
+            className="p-2 bg-[#3f5736] w-60 rounded-xl shadow-xl shadow-black/20 text-center text-white text-xl font-bold"
           >
             Prosseguir
           </Link>
