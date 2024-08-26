@@ -62,7 +62,7 @@ export default function Home() {
         alt="gifts"
         width={160}
         height={0}
-        className="absolute -bottom-10 left-0 rotate-[130deg]"
+        className="absolute -bottom-14 left-0 rotate-[130deg]"
       />
     </main>
   );
