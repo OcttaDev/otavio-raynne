@@ -26,7 +26,7 @@ export default function Home() {
           alt="gifts"
           width={80}
           height={0}
-          className="absolute -top-2 left-[10rem] rotate-40"
+          className="absolute -top-2 left-[11rem] rotate-40"
         />
         <div className="flex flex-col items-center gap-10 mt-2">
           <h1 className={` ${great.className} text-5xl font-bold`}>Chá de</h1>
@@ -61,7 +61,7 @@ export default function Home() {
         alt="gifts"
         width={160}
         height={0}
-        className="absolute -bottom-20 left-0 rotate-[130deg]"
+        className="absolute -bottom-10 left-0 rotate-[130deg]"
       />
     </main>
   );
