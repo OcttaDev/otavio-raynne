@@ -13,6 +13,7 @@ export interface IGift {
   id: string;
   name: string;
   quantity: number;
+  image: string;
   uid: string;
 }
 
@@ -59,16 +60,11 @@ export default function Gifts() {
           }));
 
           fetchedGifts[category] = itemsWithIds;
-          console.log(
-            `Itens adicionados à categoria ${category}:`,
-            itemsWithIds
-          );
         } else {
           console.log("Categoria não encontrada:", category);
         }
       });
 
-      console.log("Gifts a serem definidos:", fetchedGifts);
       setGifts(fetchedGifts);
     } catch (error) {
       console.error("Deu algum erro ao buscar os presentes:", error);
@@ -78,6 +74,8 @@ export default function Gifts() {
   useEffect(() => {
     handleGetGifts();
   }, []);
+
+  console.log(gifts);
 
   return (
     <main className="p-5 w-full">

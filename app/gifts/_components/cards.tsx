@@ -16,6 +16,7 @@ import {
 } from "firebase/firestore";
 import { useAuthContext } from "@/app/_context/authContext";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function Cards({
   gift,
@@ -32,6 +33,7 @@ export default function Cards({
     await addDoc(collection(db, "presentes-escolhidos"), {
       item: gift.name,
       category: category,
+      image: gift.image,
       convidado: user?.uid,
     })
       .then((res) => {
@@ -101,7 +103,9 @@ export default function Cards({
   return (
     <Card>
       <CardHeader className="relative flex flex-col items-center justify-center gap-2 ">
-        {/* <Image src="" alt="gifts" width={200} height={200} /> */}
+        <div className="w-full h-40 relative">
+          <Image src={gift.image} alt="gifts" fill className="object-cover" />
+        </div>
         <span
           className={`absolute top-2 left-5 ${
             gift.quantity >= 1 ? "bg-green-500/40" : "bg-red-500/40"
@@ -112,7 +116,8 @@ export default function Cards({
           </p>
         </span>
       </CardHeader>
-      <CardContent className="w-40 h-40 flex flex-col items-center justify-end">
+
+      <CardContent className=" w-40 h-40 flex flex-col items-center justify-end ">
         <div className="w-full flex flex-col mt-10">
           <div className="flex items-center justify-between">
             <p className="text-xs  capitalize">{category}</p>
