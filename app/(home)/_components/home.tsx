@@ -21,14 +21,15 @@ export default function Home() {
           height={0}
           className="absolute -top-0 right-0 -rotate-[5deg]"
         />
-        <Image
-          src="/elements/panelas.svg"
-          alt="gifts"
-          width={80}
-          height={0}
-          className="absolute -top-2 left-[11rem] rotate-40"
-        />
+
         <div className="flex flex-col items-center gap-10 mt-14">
+          <Image
+            src="/elements/panelas.svg"
+            alt="gifts"
+            width={80}
+            height={0}
+            className="absolute top-10 left-[11rem] rotate-40"
+          />
           <h1 className={` ${great.className} text-5xl font-bold`}>Chá de</h1>
           <Image
             src="/elements/telhado.svg"
