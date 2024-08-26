@@ -112,7 +112,7 @@ export default function Cards({
           </p>
         </span>
       </CardHeader>
-      <CardContent className="w-40 h-40 flex flex-col items-center justify-end">
+      <CardContent className="w-[11rem] h-40 flex flex-col items-center justify-end">
         <div className="w-full flex flex-col mt-10">
           <div className="flex items-center justify-between">
             <p className="text-xs  capitalize">{category}</p>
@@ -121,7 +121,7 @@ export default function Cards({
           <p className="text-xs font-bold capitalize">{gift.name}</p>
         </div>
         <Button
-          className="bg-amber-800/30 hover:bg-amber-800/20 text-md w-full mt-5"
+          className="bg-[#617c53] hover:bg-[#617c53]/80 text-md w-full mt-5"
           onClick={handleCheckItem}
           disabled={gift.quantity <= 0}
         >

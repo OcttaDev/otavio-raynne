@@ -70,7 +70,7 @@ export default function RecevedGiftsC() {
                 <p className="text-xs  capitalize">{gift.category}</p>
                 <p className="text-xs font-bold capitalize">{gift.item}</p>
               </div>
-              <Button className="bg-amber-800/30 hover:bg-amber-800/20 text-md w-full mt-5">
+              <Button className="bg-[#617c53] hover:bg-[#617c53]/80 text-md w-full mt-5">
                 <p>Concluir</p>
               </Button>
             </CardContent>

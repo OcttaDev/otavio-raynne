@@ -37,7 +37,7 @@ export default function Sidebar() {
             <Link href="/gifts/">Home</Link>
           </Button>
           <Button variant="outline" asChild>
-            <Link href="/gifts/receved-gifts">Favoritos</Link>
+            <Link href="/gifts/receved-gifts">Escolhidos por mim</Link>
           </Button>
         </div>
         <SheetFooter className="absolute bottom-10 left-0 right-0 w-full">
