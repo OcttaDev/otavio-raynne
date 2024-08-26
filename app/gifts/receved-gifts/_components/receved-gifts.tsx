@@ -12,6 +12,7 @@ import { useAuthContext } from "@/app/_context/authContext";
 import Cards from "../../_components/cards";
 import { IGifts } from "../../_components/gifts";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import Image from "next/image";
 
 export default function RecevedGiftsC() {
   const [gifts, setGifts] = useState<IGifts[]>([]);
@@ -21,6 +22,7 @@ export default function RecevedGiftsC() {
   interface IGifts {
     id: string;
     item: string;
+    image: string;
     category: string;
   }
   const handleGetGifts = async () => {
@@ -34,6 +36,7 @@ export default function RecevedGiftsC() {
             list.push({
               id: doc.id,
               item: doc.data().item,
+              image: doc.data().image,
               category: doc.data().category,
             });
           }
@@ -59,7 +62,14 @@ export default function RecevedGiftsC() {
         {gifts.map((gift) => (
           <Card key={gift.id}>
             <CardHeader className="relative flex flex-col items-center justify-center gap-2 ">
-              {/* <Image src="" alt="gifts" width={200} height={200} /> */}
+              <div className="w-full h-40 relative">
+                <Image
+                  src={gift.image}
+                  alt="gifts"
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <span className="absolute top-2 left-5 bg-green-500/40 p-2 rounded-md shadow-xl shadow-black/20">
                 <p className="text-white font-medium ">Escolhido</p>
               </span>
