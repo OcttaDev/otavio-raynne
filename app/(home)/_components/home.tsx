@@ -28,7 +28,7 @@ export default function Home() {
           height={0}
           className="absolute -top-2 left-[11rem] rotate-40"
         />
-        <div className="flex flex-col items-center gap-10 mt-2">
+        <div className="flex flex-col items-center gap-10 mt-14">
           <h1 className={` ${great.className} text-5xl font-bold`}>Chá de</h1>
           <Image
             src="/elements/telhado.svg"
