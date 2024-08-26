@@ -12,7 +12,7 @@ export default function Home() {
   const text = `"Alegrem-se na esperança, sejam pacientes na tribulação, perseverem
             na oração. Rm 12:12"`;
   return (
-    <main className="w-full">
+    <main className="w-full h-screen flex items-center ">
       <header className="w-full h-[600px] flex flex-col items-center justify-center ">
         <Image
           src="/elements/flor-fundo.svg"
