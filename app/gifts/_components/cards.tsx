@@ -33,7 +33,9 @@ export default function Cards({
     await addDoc(collection(db, "presentes-escolhidos"), {
       item: gift.name,
       category: category,
+      number: gift.id,
       image: gift.image,
+      tableId: gift.uid,
       convidado: user?.uid,
     })
       .then((res) => {

@@ -26,56 +26,7 @@ export interface IGifts {
 }
 
 export default function Gifts() {
-  const [gifts, setGifts] = useState<IGifts>({
-    cozinha: [],
-    sala: [],
-    quarto: [],
-    banheiro: [],
-  });
-
-  const { user } = useAuthContext();
-
-  const handleGetGifts = async () => {
-    try {
-      const giftsRef = collection(db, "presentes");
-      const snapshot = await getDocs(giftsRef);
-
-      const fetchedGifts: IGifts = {
-        cozinha: [],
-        sala: [],
-        quarto: [],
-        banheiro: [],
-      };
-
-      snapshot.forEach((doc) => {
-        const data = doc.data();
-        const category = data.category as keyof IGifts;
-        const items = data.items as IGift[];
-
-        if (category && fetchedGifts[category]) {
-          // Adiciona o id do documento como um campo em cada item
-          const itemsWithIds = items.map((item) => ({
-            ...item,
-            uid: doc.id, // Associa o id do documento a cada item
-          }));
-
-          fetchedGifts[category] = itemsWithIds;
-        } else {
-          console.log("Categoria não encontrada:", category);
-        }
-      });
-
-      setGifts(fetchedGifts);
-    } catch (error) {
-      console.error("Deu algum erro ao buscar os presentes:", error);
-    }
-  };
-
-  useEffect(() => {
-    handleGetGifts();
-  }, []);
-
-  console.log(gifts);
+  const { user, gifts: giftsContext } = useAuthContext();
 
   return (
     <main className="p-5 w-full">
@@ -130,7 +81,7 @@ export default function Gifts() {
         </Icons>
       </section>
       <div className="mt-10 flex flex-wrap gap-5 ">
-        {Object.entries(gifts).map(([category, giftsList]) =>
+        {Object.entries(giftsContext).map(([category, giftsList]) =>
           giftsList.map((gift: IGift) => (
             <Cards gift={gift} key={gift.id} category={category} />
           ))
