@@ -136,10 +136,8 @@ export default function Cards({
 
       <CardContent className=" w-40 h-40 flex flex-col items-center justify-end ">
         <div className="w-full flex flex-col mt-10">
-          <div className="flex items-center justify-between">
-            <p className="text-xs  capitalize">{category}</p>
-            <p className="text-xs  capitalize">{gift.quantity}</p>
-          </div>
+          <p className="text-xs  capitalize">{category}</p>
+
           <p className="text-xs font-bold capitalize">{gift.name}</p>
         </div>
         <Button
