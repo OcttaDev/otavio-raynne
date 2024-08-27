@@ -10,7 +10,7 @@ const great = Great_Vibes({ weight: "400", subsets: ["latin"] });
 
 export default function Home() {
   const text = `"Alegrem-se na esperança, sejam pacientes na tribulação, perseverem
-            na oração. Rm 12:12"`;
+            na oração." `;
   return (
     <main className="w-full flex items-center ">
       <div className="w-full h-screen flex flex-col items-center justify-center ">
@@ -35,7 +35,7 @@ export default function Home() {
           <Image
             src="/elements/telhado.svg"
             alt="gifts"
-            width={170}
+            width={190}
             height={0}
             className="absolute"
           />
@@ -47,7 +47,10 @@ export default function Home() {
           <h1 className={` ${great.className} text-5xl font-bold`}>
             Otávio e Raynne
           </h1>
-          <p className="max-w-[73%] text-center text-sm ">{text}</p>
+          <div className="max-w-[73%] text-center text-sm flex flex-col">
+            <p>{text}</p>
+            <p>Rm 12:12</p>
+          </div>
         </div>
         <div className="w-full flex justify-center mt-10">
           <Link
