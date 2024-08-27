@@ -40,7 +40,7 @@ export default function Home() {
             className="absolute"
           />
           <p
-            className={` ${forum.className} font-bold text-3xl mt-7 text-[#3f5736]`}
+            className={` ${forum.className} font-bold text-3xl mt-10 text-[#3f5736]`}
           >
             NOVA
           </p>
