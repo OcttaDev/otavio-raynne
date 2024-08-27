@@ -12,24 +12,22 @@ export default function Home() {
   const text = `"Alegrem-se na esperança, sejam pacientes na tribulação, perseverem
             na oração." `;
   return (
-    <main className="w-full flex items-center ">
-      <div className="w-full h-screen flex flex-col items-center justify-center ">
+    <main className="w-full h-screen justify-center flex items-center ">
+      <Image
+        src="/elements/flor-fundo.svg"
+        alt="gifts"
+        width={160}
+        height={0}
+        className="absolute -top-0 right-0 -rotate-[5deg]"
+      />
+      <div className="w-full  flex flex-col items-center justify-center relative mt-28">
         <Image
-          src="/elements/flor-fundo.svg"
+          src="/elements/panelas.svg"
           alt="gifts"
-          width={160}
+          width={90}
           height={0}
-          className="absolute -top-0 right-0 -rotate-[5deg]"
+          className="ml-10 absolute -top-14 rotate-40"
         />
-        <div className="w-full flex justify-center mt-10">
-          <Image
-            src="/elements/panelas.svg"
-            alt="gifts"
-            width={90}
-            height={0}
-            className="ml-10 absolute top-36  rotate-40"
-          />
-        </div>
         <div className="flex flex-col items-center gap-10 mt-14">
           <h1 className={` ${great.className} text-5xl font-bold`}>Chá de</h1>
           <Image
@@ -37,7 +35,7 @@ export default function Home() {
             alt="gifts"
             width={190}
             height={0}
-            className="absolute top-56"
+            className="absolute top-0"
           />
           <p
             className={` ${forum.className} font-bold text-3xl mt-0 text-[#3f5736]`}
@@ -60,14 +58,14 @@ export default function Home() {
             Prosseguir
           </Link>
         </div>
-        <Image
-          src="/elements/flor-fundo.svg"
-          alt="gifts"
-          width={160}
-          height={0}
-          className="absolute -bottom-14 left-0 rotate-[130deg]"
-        />
       </div>
+      <Image
+        src="/elements/flor-fundo.svg"
+        alt="gifts"
+        width={160}
+        height={0}
+        className="absolute -bottom-14 left-0 rotate-[130deg]"
+      />
     </main>
   );
 }
