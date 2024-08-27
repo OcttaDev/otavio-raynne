@@ -27,7 +27,7 @@ export default function Home() {
             alt="gifts"
             width={90}
             height={0}
-            className="ml-10 absolute top-40  rotate-40"
+            className="ml-10 absolute top-36  rotate-40"
           />
         </div>
         <div className="flex flex-col items-center gap-10 mt-14">
