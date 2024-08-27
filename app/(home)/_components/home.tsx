@@ -25,7 +25,7 @@ export default function Home() {
           <Image
             src="/elements/panelas.svg"
             alt="gifts"
-            width={80}
+            width={90}
             height={0}
             className="ml-10 absolute top-40  rotate-40"
           />
