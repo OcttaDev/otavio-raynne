@@ -47,7 +47,7 @@ export default function Home() {
           <h1 className={` ${great.className} text-5xl font-bold`}>
             Otávio e Raynne
           </h1>
-          <p className="max-w-sm text-center text-sm ">{text}</p>
+          <p className="max-w-[73%] text-center text-sm ">{text}</p>
         </div>
         <div className="w-full flex justify-center mt-10">
           <Link
