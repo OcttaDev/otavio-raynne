@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
     const mailOptions = {
       from: data.email,
       to: process.env.NEXT_PUBLIC_GMAIL_USER,
-      subject: `Novo presente na lista - ${data.presente}`,
+      subject: `Novo presente escolhido - ${data.presente}`,
       text: `É com amor que presenteamos a vocês, de coração, ${data.convidado}`,
     };
 

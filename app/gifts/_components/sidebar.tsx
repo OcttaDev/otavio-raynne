@@ -11,6 +11,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { SidebarOpen } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Sidebar() {
@@ -27,7 +28,7 @@ export default function Sidebar() {
       </SheetTrigger>
       <SheetContent className="flex flex-col items-center">
         <SheetHeader>
-          <SheetTitle>O & R</SheetTitle>
+          <Image src="/elements/logo.png" alt="logo" width={100} height={100} />
           <SheetDescription>
             Acompanhe nossos preparativos de pertinho.
           </SheetDescription>

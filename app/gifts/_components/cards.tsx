@@ -38,6 +38,7 @@ export default function Cards({
     })
       .then((res) => {
         handleCheckItemQuantity(gift.uid, gift.id);
+        handleSendEmail();
         toast({
           title: gift.name,
           description: "Item escolhido com sucesso!",
@@ -98,6 +99,20 @@ export default function Cards({
         `Quantidade do item ${itemId} não é suficiente para atualizar.`
       );
     }
+  };
+
+  const handleSendEmail = async () => {
+    const response = await fetch("/api/create-task/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: user?.email,
+        presente: gift.name,
+        convidado: user?.displayName,
+      }),
+    });
   };
 
   return (

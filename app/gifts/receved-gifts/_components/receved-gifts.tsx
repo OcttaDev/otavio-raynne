@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, HandIcon } from "lucide-react";
+import { Check, ChevronLeft, HandIcon, Trash } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
@@ -77,12 +77,20 @@ export default function RecevedGiftsC() {
 
             <CardContent className="w-40 flex flex-col items-center">
               <div className="w-full flex flex-col mt-10">
-                <p className="text-xs  capitalize">{gift.category}</p>
+                <p className="text-xs capitalize">{gift.category}</p>
                 <p className="text-xs font-bold capitalize">{gift.item}</p>
               </div>
-              <Button className="bg-[#617c53] hover:bg-[#617c53]/80 text-md w-full mt-5">
-                <p>Concluir</p>
-              </Button>
+              <div className="w-full flex justify-between mt-10">
+                <Button className="bg-[#617c53] hover:bg-[#617c53]/80 text-md  mt-5 shadow-xl shadow-black/20">
+                  <Check />
+                </Button>
+                <Button
+                  className="bg-destructive hover:bg-destructive/80 text-md  mt-5 shadow-xl shadow-black/20"
+                  size="icon"
+                >
+                  <Trash />
+                </Button>
+              </div>
             </CardContent>
           </Card>
         ))}
