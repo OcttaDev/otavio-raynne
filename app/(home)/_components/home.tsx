@@ -37,7 +37,7 @@ export default function Home() {
             alt="gifts"
             width={190}
             height={0}
-            className="absolute top-60"
+            className="absolute top-56"
           />
           <p
             className={` ${forum.className} font-bold text-3xl mt-0 text-[#3f5736]`}
