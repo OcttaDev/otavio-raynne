@@ -10,11 +10,20 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { auth } from "@/lib/firebase.confing";
+import { signOut } from "firebase/auth";
 import { SidebarOpen } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Sidebar() {
+  const router = useRouter();
+  async function Signout() {
+    await signOut(auth).then(() => {
+      router.push("/auth");
+    });
+  }
   return (
     <Sheet>
       <SheetTrigger>
@@ -28,7 +37,14 @@ export default function Sidebar() {
       </SheetTrigger>
       <SheetContent className="flex flex-col items-center">
         <SheetHeader>
-          <Image src="/elements/logo.png" alt="logo" width={100} height={100} />
+          <div className="w-full flex justify-center">
+            <Image
+              src="/elements/logo.svg"
+              alt="Logo do projeto"
+              width={100}
+              height={100}
+            />
+          </div>
           <SheetDescription>
             Acompanhe nossos preparativos de pertinho.
           </SheetDescription>
@@ -46,6 +62,7 @@ export default function Sidebar() {
             variant="destructive"
             size="sm"
             className="w-20 m-auto shadow-md shadow-black/20"
+            onClick={Signout}
           >
             Sair
           </Button>
