@@ -35,12 +35,12 @@ export default function Home() {
           <Image
             src="/elements/telhado.svg"
             alt="gifts"
-            width={150}
+            width={170}
             height={0}
             className="absolute"
           />
           <p
-            className={` ${forum.className} font-bold text-2xl mt-5 text-[#3f5736]`}
+            className={` ${forum.className} font-bold text-3xl mt-7 text-[#3f5736]`}
           >
             NOVA
           </p>
