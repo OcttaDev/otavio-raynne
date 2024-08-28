@@ -26,7 +26,7 @@ export default function Home() {
           alt="gifts"
           width={90}
           height={0}
-          className="ml-10 absolute -top-10 rotate-40"
+          className="ml-10 absolute -top-16 rotate-40"
         />
         <div className="flex flex-col items-center gap-10 mt-14">
           <h1 className={` ${great.className} text-5xl font-bold`}>Chá de</h1>
